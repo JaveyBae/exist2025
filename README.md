@@ -137,40 +137,12 @@ This task classifies sexist memes using the same categories as Subtask 1.3:
 The following figures are some examples of categorized memes.
 
 <img width="1063" height="924" alt="image" src="https://github.com/user-attachments/assets/45d6eabd-ef9e-48b5-b16b-bb0969e1ac06" />
-
-## Research Objectives
-
-- Compile and preprocess datasets containing social media posts, organized at the sentence and conversation level.
-- Design and train ML models to:
-  - Detect symptom-specific sentence relevance (Task 1).
-  - Model user-level depression probability through temporal conversation analysis (Task 2).
-- Rank sentences based on their alignment with the following 21 BDI-II symptoms:
-
-  1. Sadness
-  2. Pessimism
-  3. Feelings of failure
-  4. Loss of pleasure
-  5. Feelings of guilt
-  6. Feelings of punishment
-  7. Dissatisfaction with oneself
-  8. Severe self-criticism
-  9. Suicidal thoughts or desires
-  10. Crying
-  11. Agitation
-  12. Loss of interest
-  13. Indecisiveness
-  14. Loss of energy
-  15. Changes in sleeping habits
-  16. Irritability
-  17. Changes in appetite
-  18. Difficulty concentrating
-  19. Tiredness or fatigue
-  20. Loss of interest in sex
-  21. Physical disorders related to emotional state
+### Subtask 3.1: Sexism Identification in Videos
+To be discussed (We currently don't have video dataset (Exist 2021-2024 have no video data))
 
 ---
 
-## Data Sets
+## DataSets
 
 The dataset used in this project was collected from TikTok using Apify’s TikTok Hashtag Scraper tool, focusing on hashtags potentially associated with sexist content. A rigorous manual selection process was conducted to ensure a balanced representation of both positive and negative seed hashtags. In total, 185 Spanish hashtags and 61 English hashtags were selected, ensuring a broad and representative collection of sexist-related content in both languages.
 
@@ -179,6 +151,58 @@ The collected videos were divided into training and test sets following a chrono
 The final dataset consists of over 3,000 videos, with the training set containing 2,524 videos (1,524 Spanish and 1,000 English) and the test set containing 674 videos (304 Spanish and 370 English).
 
 
+## Evaluation
+
+The evaluation of the nine subtasks in this project can be described as follows:
+
+### 1. Subtask Types
+
+| Subtask | Task | Output Type |
+|---------|------|------------|
+| 1.1, 2.1, 3.1 | Sexism Identification | Binary classification, single-label (YES/NO) |
+| 1.2, 2.2, 3.2 | Source Intention | Multi-class hierarchical classification, single-label (DIRECT / REPORTED / JUDGEMENTAL) |
+| 1.3, 2.3, 3.3 | Sexism Categorization | Multi-class hierarchical classification, multi-label (IDEOLOGICAL AND INEQUALITY, STEREOTYPING AND DOMINANCE, OBJECTIFICATION, SEXUAL VIOLENCE, MISOGYNY AND NON-SEXUAL VIOLENCE) |
+
+- **Single-label tasks**: each sample belongs to exactly one class.  
+- **Multi-label tasks**: a sample can belong to multiple categories simultaneously.
+
+---
+
+### 2. Hard vs. Soft Labels
+
+- **Hard labels**: Each sample has a final “gold” label, usually derived via majority vote among annotators. Systems produce a definite class or set of classes.  
+- **Soft labels**: The distribution of annotator labels is preserved as probabilities for each class. Systems can output class probabilities instead of single labels.  
+- **Multi-label tasks**: the sum of probabilities across classes may exceed 1.  
+
+---
+
+### 3. Evaluation Metrics
+
+- **Official metric**: **Information Contrastive Measure (ICM)** (Amigó & Delgado, 2022), a generalized similarity function based on pointwise mutual information (PMI).  
+- Suitable for:
+  - Hierarchical classification (binary first-level, multi-class second-level)  
+  - Multi-label tasks  
+  - Handling annotator disagreement (soft labels)  
+
+- **Hard-Hard Evaluation**: hard system output compared to hard labels  
+- **Soft-Soft Evaluation**: system probability output compared to annotator probability distributions (soft labels)  
+
+- **F1-score** is also reported for reference:
+  - Binary tasks: positive-class F1  
+  - Multi-label tasks: average F1 across all classes  
+
+> Note: F1 does not consider class hierarchy; errors between first-level and second-level classes are weighted equally, although first-level errors are more severe.
+
+---
+
+### 4. Hard Label Assignment Rules
+
+- **Binary classification** (1.1, 2.1, 3.1): selected if more than 3 annotators agree  
+- **Source intention** (1.2, 2.2): selected if more than 2 annotators agree  
+- **Multi-label classification** (1.3, 2.3): selected if more than 1 annotator agrees  
+- Samples with no class exceeding threshold are excluded from hard evaluation
+
+---
 
 
 ## Output
