@@ -234,18 +234,6 @@ The evaluation of the nine subtasks in this project can be described as follows:
 
 ---
 
-
-## Output
-
-- **Task 1:**
-  - A ranked list of depressive symptoms most relevant to each sentence analyzed.
-- **Task 2:**
-  - A prediction score indicating the likelihood of depression for each user based on sequential conversation modeling.
-- **Task 3 (TBD):**
-  - A prototype of a conversational agent capable of real-time mental health state assessment through dialogue.
-
----
-
 ## Requirements
 
 - Strong motivation and interest in mental health applications and social media analysis.
