@@ -3,8 +3,14 @@
 ## Title
 **EXIST: sEXism Identification in Social neTworks Fifth Shared Task at CLEF 2025**
 
+
+## Member
+Claudia Jurado Santos ， Nilaksan Selliah ， Jiawei Pei
+
 ## Supervisors
 David Robert Reich
+
+
 
 ## Intended Start
 Beginning August 2025 
@@ -13,7 +19,7 @@ Beginning August 2025
 
 ## Background
 
-Social Networks are the main platforms for social complaint, activism, etc. Movements like #MeTwoo, #8M or #Time’sUp have spread rapidly. Under the umbrella of social networks, many women all around the world have reported abuses, discriminations and other sexist experiences suffered in real life. Social networks are also contributing to the transmission of sexism and other disrespectful and hateful behaviours. In this context, automatic tools not only may help to detect and alert against sexism behaviours and discourses, but also to estimate how often sexist and abusive situations are found in social media platforms, what forms of sexism are more frequent and how sexism is expressed in these media. This Lab will contribute to developing applications to detect sexism.
+Social Networks are the main platforms for social complaint, activism, etc. Movements like #MeTwoo, #8M or #Time’sUp have spread rapidly. Under the umbrella of social networks, many women all around the world have reported abuses, discriminations and other sexist experiences suffered in real life. Social networks are also contributing to the transmission of sexism and other disrespectful and hateful behaviours. In this context, automatic tools not only may help to detect and alert against sexism behaviours and discourses, but also to estimate how often sexist and abusive situations are found in social media platforms, what forms of sexism are more frequent and how sexism is expressed in these media. This project will contribute to developing applications to detect sexism.
 
 
 
@@ -149,6 +155,30 @@ The dataset used in this project was collected from TikTok using Apify’s TikTo
 The collected videos were divided into training and test sets following a chronological and author-based partitioning strategy. This approach preserves temporal coherence while preventing data leakage: authors present in the training set were excluded from the test set, reducing the risk of the model learning author-specific patterns and improving generalization capabilities. Furthermore, each hashtag was required to contribute a minimum number of videos, ensuring a more uniform distribution across the dataset. Final video selection was performed randomly, while maintaining temporal distribution to avoid overrepresentation of any particular time period.
 
 The final dataset consists of over 3,000 videos, with the training set containing 2,524 videos (1,524 Spanish and 1,000 English) and the test set containing 674 videos (304 Spanish and 370 English).
+
+<img width="1306" height="527" alt="Screenshot 2025-08-24 at 19 39 26" src="https://github.com/user-attachments/assets/344889c3-223b-46eb-b422-fdc4f09dae5f" />
+
+###  Dataset Structure
+
+The data is stored in **JSON format** with multiple records. Each record contains the following fields:
+
+| Field | Description |
+|-------|-------------|
+| `id` | Unique identifier for the record |
+| `lang` | Language of the text (`es` for Spanish in the sample) |
+| `text` | Text content of the meme |
+| `path-memes` | Possible path to the meme image |
+| `number-annotators` | Number of annotators (e.g., 6 in the sample) |
+| `annotators` | Annotator identifiers or information |
+| `gender-annotators` | Gender of annotators |
+| `age-annotators` | Age of annotators |
+| `ethnicities-annotators` | Ethnicity of annotators |
+| `study_levels-annotators` | Education level of annotators |
+| `countries-annotators` | Annotators’ country of residence |
+| `labels_task4` | Task 4 labels (e.g., "YES", "DIRECT") |
+| `labels_task6` | Task 6 labels (e.g., "Ideological-Inequality") |
+
+
 
 
 ## Evaluation
