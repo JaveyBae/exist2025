@@ -27,19 +27,18 @@ Social Networks are the main platforms for social complaint, activism, etc. Move
 
 In this project, we aim to investigate methods for the automatic identification and characterization of sexism in social media. The study will follow the framework of the EXIST shared task and focus on analyzing sexist content from multiple sources and modalities.
 
-Specifically, the lab defines nine subtasks distributed across two languages (English and Spanish). These correspond to the same three core tasks—(1) sexism identification, (2) source intention detection, and (3) sexism categorization—applied to three distinct types of media:
+Specifically, the lab defines nine subtasks distributed across two languages (English and Spanish). These correspond to the same three core tasks—(1) sexism identification, (2) source intention detection, and (3) sexism categorization—applied to two distinct types of media:
 
 Text (tweets)
 
 Images (memes)
 
-Videos (TikToks)
-
 This multimodal design is intended to capture a wider range of social interactions and linguistic/visual patterns, enabling a deeper understanding of how sexism manifests and evolves across platforms and formats.
 
 A condensed schema of the tasks included in the lab is presented in the following table:
 
-<img width="989" height="572" alt="image" src="https://github.com/user-attachments/assets/661d3779-109b-4f43-8da3-1620867c9b13" />
+
+<img width="770" height="310" alt="Screenshot 2025-08-26 at 13 19 03" src="https://github.com/user-attachments/assets/a2436da3-e897-4100-a8a0-01e789c27c3c" />
 
 
 For a more detailed description of each subtask, as well as some examples, check the sections below.
