@@ -25,7 +25,7 @@ In addition to addressing the EXIST subtasks, such as binary sexism classificati
 * **Data Augmentation:** Apply techniques such as back-translation, synonym replacement, masked language modeling, and contextual augmentation to enrich the training data, and compare their effectiveness against baseline models for the textual component.
   
 * **Multimodal Models:** Develop and evaluate models capable of jointly processing text and images, contrasting their performance with text-only models.
-* 
+  
 * **Image-to-Text:** Extract textual content from memes and treat it as an additional textual modality, enabling unified processing under NLP frameworks.
 
 * **Cross-Dataset Evaluation:** Conduct evaluations across different datasets to assess model robustness and generalizability beyond a single data source.
@@ -115,49 +115,19 @@ The following figures are some examples of categorized memes.
 
 ## DataSets  
 
-_We need to change this , this is just the explanation of one of the datasets but we got around for and they are not all from ticktok, i think it would better to explain only that they are from the shared tasks and that the types of misoginy there are and number of samples... in which lenguage..._
+[INCLUDE INFO ABOUT THE DATASETS] 
 
-The dataset used in this project was collected from TikTok using Apify’s TikTok Hashtag Scraper tool, focusing on hashtags potentially associated with sexist content. A rigorous manual selection process was conducted to ensure a balanced representation of both positive and negative seed hashtags. In total, 185 Spanish hashtags and 61 English hashtags were selected, ensuring a broad and representative collection of sexist-related content in both languages.
+## Models 
 
-The collected videos were divided into training and test sets following a chronological and author-based partitioning strategy. This approach preserves temporal coherence while preventing data leakage: authors present in the training set were excluded from the test set, reducing the risk of the model learning author-specific patterns and improving generalization capabilities. Furthermore, each hashtag was required to contribute a minimum number of videos, ensuring a more uniform distribution across the dataset. Final video selection was performed randomly, while maintaining temporal distribution to avoid overrepresentation of any particular time period.
+Initialy we would like to try the following models: 
 
-The final dataset consists of over 3,000 videos, with the training set containing 2,524 videos (1,524 Spanish and 1,000 English) and the test set containing 674 videos (304 Spanish and 370 English).
-
-<img width="1306" height="527" alt="Screenshot 2025-08-24 at 19 39 26" src="https://github.com/user-attachments/assets/344889c3-223b-46eb-b422-fdc4f09dae5f" />
-
-###  Dataset Structure [I will delete this section this is only the structure of the last dataset]
-
-The data is stored in **JSON format** with multiple records. Each record contains the following fields:
-
-| Field | Description |
-|-------|-------------|
-| `id` | Unique identifier for the record |
-| `lang` | Language of the text (`es` for Spanish in the sample) |
-| `text` | Text content of the meme |
-| `path-memes` | Possible path to the meme image |
-| `number-annotators` | Number of annotators (e.g., 6 in the sample) |
-| `annotators` | Annotator identifiers or information |
-| `gender-annotators` | Gender of annotators |
-| `age-annotators` | Age of annotators |
-| `ethnicities-annotators` | Ethnicity of annotators |
-| `study_levels-annotators` | Education level of annotators |
-| `countries-annotators` | Annotators’ country of residence |
-| `labels_task4` | Task 4 labels (e.g., "YES", "DIRECT") |
-| `labels_task6` | Task 6 labels (e.g., "Ideological-Inequality") |
-
+[INCLUDE MODELS] 
 
 ## Evaluation
 
-Here we forgot yesterday we need to decide which evaluation metric we are gonna select to evaluate all the models and be coherent. Probably wil have to be F1-score since the datasets are not balance.
-- **F1-score** is also reported for reference:
-  - Binary tasks: positive-class F1  
-  - Multi-label tasks: average F1 across all classes  
----
+For model evaluation, we will use the F1-score as the primary metric, both for the binary classification task and for the multilabel classification task. The decision threshold will be initially set to 0.5 and subsequently fine-tuned to determine the value that yields the best performance in this specific context.
 
-## Extra 
-_Here i may add the points that we could made in case , just in case this is not enough workload_
+In addition, we will also report accuracy to provide a complementary perspective on model performance, acknowledging that while accuracy is easy to interpret, it can be less informative in cases of class imbalance.
 
 
 
-
-_To be added_
