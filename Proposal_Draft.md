@@ -1,45 +1,44 @@
 # IFI Master's Project Proposal
 
 ## Title
-**Optimizing AI Models to Identify Sexism in Social Media**
+**Developing Multimodal Transformer Approaches to Address Sexism in Social Media**
 
 ## Members
 Claudia Jurado Santos ， Nilaksan Selliah ， Jiawei Pei
 
 ## Supervisor
-David Robert Reich
+Lena Jäger, David Reich
 
 ## Background
 
 Social Networks are the main platforms for social complaint, activism, etc. Movements like #MeTwoo, #8M or #Time’sUp have spread rapidly. Under the umbrella of social networks, many women all around the world have reported abuses, discriminations and other sexist experiences suffered in real life. Social networks are also contributing to the transmission of sexism and other disrespectful and hateful behaviours. In this context, automatic tools not only may help to detect and alert against sexism behaviours and discourses, but also to estimate how often sexist and abusive situations are found in social media platforms, what forms of sexism are more frequent and how sexism is expressed in these media. This project will contribute to developing applications to detect sexism.
 
 
-
 ## Goals
 
-In this project, we aim to investigate methods for the automatic identification and characterization of sexism in social media. The study will follow the framework of the EXIST shared task and focus on analyzing sexist content from multiple sources and modalities, since the dataset used in this project is extracted from them.
+In this project, we aim to investigate methods for the automatic identification and characterization of sexism in social media. The study will follow the framework of the EXIST shared task and focus on analyzing sexist content from multiple sources and modalities, since the dataset used in this project is provided by them.
 
-This multimodal design is intended to capture a broader spectrum of social interactions and linguistic/visual patterns, enabling a deeper understanding of how sexism manifests and evolves across platforms and formats.
+This multimodal design is intended to capture a broader spectrum of social interactions and linguistic/visual patterns, enabling a deeper understanding of how sexism manifests on social platforms.
 
-In addition to addressing the EXIST subtasks—such as binary sexism classification and the categorization of different forms of sexism—we aim to explore several techniques to advance AI models for sexism detection:
+In addition to addressing the EXIST subtasks, such as binary sexism classification and the categorization of different forms of sexism, we aim to explore several techniques to enhance the performance of multimodal transformers by applying: 
 
-* **Data Augmentation:** Apply techniques such as back-translation, synonym replacement, masked language modeling, and contextual augmentation to enrich training data, and compare their effectiveness against baseline models.
-
-* **Multimodal Models:** Develop and evaluate models capable of jointly processing text and images, contrasting their performance with text-only and image-only systems.
-
+* **Data Augmentation:** Apply techniques such as back-translation, synonym replacement, masked language modeling, and contextual augmentation to enrich the training data, and compare their effectiveness against baseline models for the textual component.
+  
+* **Multimodal Models:** Develop and evaluate models capable of jointly processing text and images, contrasting their performance with text-only models.
+* 
 * **Image-to-Text:** Extract textual content from memes and treat it as an additional textual modality, enabling unified processing under NLP frameworks.
 
 * **Cross-Dataset Evaluation:** Conduct evaluations across different datasets to assess model robustness and generalizability beyond a single data source.
 
 * **Fine-Tuning Hate Speech Models:** Adapt existing hate speech detection models (e.g., through Low-Rank Adaptation, LoRA) specifically for misogyny detection, and compare them with general-purpose or multimodal models.
 
-* **Preprocessing Techniques:** Systematically evaluate the impact of different preprocessing strategies (e.g., tokenization, normalization, image transformations) on downstream performance.
+* **Preprocessing Techniques:** Systematically evaluate the impact of different preprocessing strategies (e.g., tokenization, normalization, deletion of stopwords) on downstream performance.
 
 With these goals, we intend to improve the robustness, adaptability, and accuracy of AI models when facing different forms, variations, and contexts of sexism.
 
 Some examples of the tasks from the EXIST shared task are provided below for clarification.
 
-
+## Examples: 
 
 ### Subtask 1.1: Sexism Identification in Tweets
 This subtask is a **binary classification**. Systems must decide whether a given tweet contains sexist expressions or behaviors (i.e., it is sexist itself, describes a sexist situation, or criticizes a sexist behavior), and classify it into two categories: **YES** or **NO**.
