@@ -147,11 +147,57 @@ Corpus size:
 More information about the dataset can be found in the [notebook](DataCheck_Summary.ipynb) 
 
 
-## Models 
+## Models  
 
-Initialy we would like to try the following models: 
+For this project, we plan to experiment with both **text-based models** (Task 1) and **meme-based multimodal models** (Task 2).  
 
-[INCLUDE MODELS] 
+---
+
+### Text-based Tasks (Task 1)  
+
+1. **BERT-base-multilingual-cased** [Link](https://huggingface.co/google-bert/bert-base-multilingual-cased)  
+   - Pretrained on the top 104 languages with the largest Wikipedia using a **masked language modeling (MLM)** objective.  
+   - Supports both English and Spanish, making it suitable as a **baseline model** without fine-tuning.  
+
+2. **Hate-speech-CNERG/english-abusive-MuRIL** & **Hate-speech-CNERG/dehatebert-mono-spanish**   [Link](https://huggingface.co/Hate-speech-CNERG)  
+   - Specifically trained for **hate speech detection** in English and Spanish.  
+   - Achieve strong results on abusive language tasks.  
+   - Limitation: struggle with **subtle or implicit sexist content** that does not contain overtly offensive language.  
+
+3. **xlm-roberta-base-misogyny-sexism-indomain-mix-bal**  [Link](https://huggingface.co/annahaz/xlm-roberta-base-misogyny-sexism-indomain-mix-bal)  
+   - Trained on **English misogyny/sexism datasets**.  
+   - Strong in-domain performance on English sexist content.  
+   - Limitation: not trained on **Spanish misogyny corpora** → opportunity for extension.  
+
+4. **Fine-tuned multilingual model**  
+   - We will fine-tune **BERT-base-multilingual-cased** on the **EXIST dataset**.  
+   - Goal: improve detection of sexism in **both English and Spanish**, especially subtle and context-dependent cases.  
+
+---
+
+### Meme-based Tasks (Task 2)  
+
+1. 1. **CLIP (Contrastive Language-Image Pretraining)** [Link](https://proceedings.mlr.press/v139/radford21a/radford21a.pdf)  
+   - CLIP uses a **ViT-based image encoder** to process images, making it well-suited for analyzing memes that contain both visual and textual elements.  
+   - The model is pretrained on **large-scale web image–text pairs**, many of which include images with embedded text, such as advertisements, logos, and screenshots. This pretraining allows CLIP to **implicitly capture textual cues** within images, even though it is not a dedicated OCR system.  
+   - CLIP is capable of recognizing **clear printed text (e.g., standard fonts and typography)** in images and associating it with corresponding semantic embeddings in the same vector space as natural language text. This enables the model to leverage both visual and textual information in **zero-shot or few-shot scenarios** without additional training.  
+   - However, CLIP may be less effective with **handwritten text, small fonts, or highly stylized text**, where explicit OCR might be required to extract the textual content accurately.  
+   - Overall, CLIP provides a **powerful multimodal representation**, combining image content and text signals, making it suitable for meme classification tasks where text plays a significant role in conveying meaning or sentiment.
+  
+     <img width="1997" height="747" alt="image" src="https://github.com/user-attachments/assets/d503f361-8db8-49eb-adc6-2c9d8a12ddd0" />
+
+
+
+2. **OCR-enhanced extension (optional)**  
+   - If CLIP alone does not sufficiently capture embedded text, we will incorporate **OCR** (Optical Character Recognition).  
+   - Pipeline:  
+     * Use OCR to extract meme text.  
+     * Encode extracted text with **BERT/RoBERTa**.  
+     * Fuse OCR text embeddings with CLIP’s multimodal embeddings.  
+   - Goal: provide a **richer multimodal representation** of memes, improving performance on sexism detection tasks.  
+
+---
+
 
 ## Evaluation
 
