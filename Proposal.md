@@ -115,7 +115,37 @@ The following figures are some examples of categorized memes.
 
 ## DataSets  
 
-[INCLUDE INFO ABOUT THE DATASETS] 
+For the development of this project, we will use the datasets released in the context of the EXIST Shared Tasks from 2021 to 2024. Below is a summary of their main features:
+
+Corpus size:
+
+* Between the 2021 and 2023 editions, the datasets include a total of **13,897** labeled samples for training and **4,368** samples for testing.
+* The corpora consist of tweets annotated in both Spanish and English.
+
+**Exist21/22**
+
+* The task involved both a binary classification (sexist / non-sexist) and a finer-grained categorization into different types of sexism. 
+* While the binary labels are relatively balanced, the categorization into specific sexism types shows a strong class imbalance.
+* In particular, the non-sexist class is heavily overrepresented compared to the sexist categories, while objectification is the least represented among sexism types.
+
+<img width="1390" height="590" alt="image" src="https://github.com/user-attachments/assets/27272a1b-48b4-4a19-a3a9-1835fa91bea2" />
+
+<img width="1390" height="590" alt="image" src="https://github.com/user-attachments/assets/42119451-70f2-48bd-804e-64a33355e8c7" />
+
+**EXIST23**
+* A new dimension was introduced: user intention classification (e.g., Direct, Judgemental, Reported, etc.).
+* Multiple annotators were preserved for each tweet, maintaining diversity of perspectives.
+* Tweets were allowed to be assigned multiple labels, which better captures the complexity of sexist discourse in social media.
+
+**EXIST24**
+
+* The dataset was further enriched with annotator demographic variables: education level, age, ethnicity, and country of origin.
+* This addition enables research on how annotator diversity affects labeling decisions, providing a more robust resource for studying bias and inter-annotator agreement.
+
+<img width="1589" height="590" alt="image" src="https://github.com/user-attachments/assets/e459e091-36a6-49eb-8adb-6a623d150334" />
+
+More information about the dataset can be found in the [notebook](README.MD) 
+
 
 ## Models 
 
