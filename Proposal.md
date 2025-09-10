@@ -6,12 +6,12 @@
 ## Members
 Claudia Jurado Santos ， Nilaksan Selliah ， Jiawei Pei
 
-## Supervisor
+## Supervisors
 Lena Jäger, David Reich
 
 ## Background
 
-Social Networks are the main platforms for social complaint, activism, etc. Movements like #MeTwoo, #8M or #Time’sUp have spread rapidly. Under the umbrella of social networks, many women all around the world have reported abuses, discriminations and other sexist experiences suffered in real life. Social networks are also contributing to the transmission of sexism and other disrespectful and hateful behaviours. In this context, automatic tools not only may help to detect and alert against sexism behaviours and discourses, but also to estimate how often sexist and abusive situations are found in social media platforms, what forms of sexism are more frequent and how sexism is expressed in these media. This project will contribute to developing applications to detect sexism.
+Social Networks are the main platforms for social complaint, activism, etc. Movements like #MeTwoo, #8M or #Time’sUp have spread rapidly. Under the umbrella of social networks, many women all around the world have reported abuses, discriminations and other sexist experiences suffered in real life. Social networks are also contributing to the transmission of sexism and other disrespectful and hateful behaviours. In this context, automatic tools not only may help to detect and alert against sexism behaviours and discourses, but also to estimate how often sexist and abusive situations are found in social media platforms, what forms of sexism are more frequent and how sexism is expressed in these media. This project aims to contribute to the development of applications that detect sexism using AI techniques.
 
 
 ## Goals
@@ -36,7 +36,7 @@ In addition to addressing the EXIST subtasks, such as binary sexism classificati
 
 With these goals, we intend to improve the robustness, adaptability, and accuracy of AI models when facing different forms, variations, and contexts of sexism.
 
-Some examples of the tasks from the EXIST shared task are provided below for clarification.
+Some examples of the tasks from the EXISTS shared task are provided below for clarification.
 
 ## Examples: 
 
