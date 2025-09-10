@@ -149,15 +149,15 @@ More information about the dataset can be found in the [notebook](DataCheck_Summ
 
 ## Models  
 
-For this project, we plan to experiment with both **text-based models** (Task 1) and **meme-based multimodal models** (Task 2).  
+For this project, we plan to experiment with both **text-based models** and **meme-based multimodal models**.  
 
 ---
 
-### Text-based Tasks (Task 1)  
+### Text-based Tasks
 
 1. **BERT-base-multilingual-cased** [Link](https://huggingface.co/google-bert/bert-base-multilingual-cased)  
    - Pretrained on the top 104 languages with the largest Wikipedia using a **masked language modeling (MLM)** objective.  
-   - Supports both English and Spanish, making it suitable as a **baseline model** without fine-tuning.  
+   - Supports both English and Spanish, making it suitable as a **baseline model**.  
 
 2. **Hate-speech-CNERG/english-abusive-MuRIL** & **Hate-speech-CNERG/dehatebert-mono-spanish**   [Link](https://huggingface.co/Hate-speech-CNERG)  
    - Specifically trained for **hate speech detection** in English and Spanish.  
@@ -171,11 +171,15 @@ For this project, we plan to experiment with both **text-based models** (Task 1)
 
 4. **Fine-tuned multilingual model**  
    - We will fine-tune **BERT-base-multilingual-cased** on the **EXIST dataset**.  
-   - Goal: improve detection of sexism in **both English and Spanish**, especially subtle and context-dependent cases.  
+   - Goal: improve detection of sexism in **both English and Spanish**, especially subtle and context-dependent cases.
+
+5. **RoBERTuito model: Fine-tuned multilingual model**
+  - We will fine-tune RoBERTuito, a model pretrained on social media data.
+  - Goal: improve detection of sexism in both English and Spanish, taking advantage of the patterns learned from social media during pretraining.
 
 ---
 
-### Meme-based Tasks (Task 2)  
+### Meme-based Tasks  
 
 1. 1. **CLIP (Contrastive Language-Image Pretraining)** [Link](https://proceedings.mlr.press/v139/radford21a/radford21a.pdf)  
    - CLIP uses a **ViT-based image encoder** to process images, making it well-suited for analyzing memes that contain both visual and textual elements.  
