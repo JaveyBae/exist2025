@@ -144,7 +144,7 @@ Corpus size:
 
 <img width="1589" height="590" alt="image" src="https://github.com/user-attachments/assets/e459e091-36a6-49eb-8adb-6a623d150334" />
 
-More information about the dataset can be found in the [notebook](README.MD) 
+More information about the dataset can be found in the [notebook](DataCheckSummary.ipynb) 
 
 
 ## Models 
