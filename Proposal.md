@@ -181,7 +181,7 @@ For this project, we plan to experiment with both **text-based models** and **me
 
 ### Meme-based Tasks  
 
-1. 1. **CLIP (Contrastive Language-Image Pretraining)** [Link](https://proceedings.mlr.press/v139/radford21a/radford21a.pdf)  
+1.  **CLIP (Contrastive Language-Image Pretraining)** [Link](https://proceedings.mlr.press/v139/radford21a/radford21a.pdf)  
    - CLIP uses a **ViT-based image encoder** to process images, making it well-suited for analyzing memes that contain both visual and textual elements.  
    - The model is pretrained on **large-scale web image–text pairs**, many of which include images with embedded text, such as advertisements, logos, and screenshots. This pretraining allows CLIP to **implicitly capture textual cues** within images, even though it is not a dedicated OCR system.  
    - CLIP is capable of recognizing **clear printed text (e.g., standard fonts and typography)** in images and associating it with corresponding semantic embeddings in the same vector space as natural language text. This enables the model to leverage both visual and textual information in **zero-shot or few-shot scenarios** without additional training.  
@@ -199,6 +199,21 @@ For this project, we plan to experiment with both **text-based models** and **me
      * Encode extracted text with **BERT/RoBERTa**.  
      * Fuse OCR text embeddings with CLIP’s multimodal embeddings.  
    - Goal: provide a **richer multimodal representation** of memes, improving performance on sexism detection tasks.  
+
+3. **RoBERTuito for Text-only Meme Analysis**
+
+  - Model Description: RoBERTuito is a multilingual BERT-based model pretrained on Spanish and English social media data (e.g., Twitter). It is optimized for short, informal text, making it ideal for analyzing textual content extracted from memes.
+  - Purpose: As a single-modality text model, RoBERTuito will process text obtained via OCR (e.g., Tesseract) from memes, focusing on sentiment, sarcasm, or sexism detection independently of visual elements. This complements the multimodal approach of CLIP by isolating textual contributions.
+  - Advantages:
+
+    - Captures social media-specific patterns, highly relevant to meme culture.
+    - Supports both English and Spanish, enhancing cross-lingual meme analysis.
+    - Fine-tunable on datasets like EXIST to improve detection of subtle sexism.
+
+
+  - Limitations:
+    - Depends on accurate OCR for text extraction; may struggle with handwritten or stylized text.
+    - Best suited for short text, with potential performance drops on long or context-heavy content.
 
 ---
 
