@@ -25,6 +25,13 @@ I reviewed the EXIST 2024 shared task papers and attempted to locate the corresp
 | 21 | Multilingual Sexism Detection in Memes: A CLIP-Enhanced Machine Learning Approach (Umera Wajeed Pasha) | Not found                                                    | Task 4 (memes) — Rank 36 overall, Rank 30 (Spanish), Rank 37 (English)                                                      | Uses CLIP image embeddings + traditional ML classifiers (RF, SVM, XGBoost, LR, AdaBoost, SGD, NN). Random Forest performs best. Pure image-feature pipeline (no text fusion). Moderate performance: F1≈0.596 overall, better on Spanish than English. No code shared. |
 | 22 | Language-based Mixture of Transformers for EXIST2024 (Petrescu, Truică, Apostol) | Not found                                                    | Tasks 1–3 (tweets only):• Best ranks: T1 Soft-Soft EN = 5th, T1 Hard-Hard EN = 12th • T2: 9th (Soft-Soft ALL)• T3: 6th (Hard-Hard ALL)                                                       | Mixture-of-Transformers (MoT) strategy combining English-only + multilingual transformer models (Twitter-RoBERTa, XLM-R Twitter, DistilBERT, MiniLM, Toxic-BERT). Mix weights: 50–50, 75–25, and dominant model. Best results for soft evaluation; strong English performance. Tasks 1–3 only (no memes). No code repo referenced. |
 | 23 | Sexism Identification in Social Networks with Generation-based Language Models (Le Minh Quan & Dang Van Thin) | Not found                                                    | Tasks 1–3 (Tweet tasks): • Task 1 Hard-Hard: 2nd (F1 ≈ 0.7826)• Task 2 Hard-Hard: 1st (F1 ≈ 0.5677)• Task 3 Hard-Hard: 1st (F1 ≈ 0.6004)                                                       | Ensemble of six models per task, mimicking annotators. Uses Llama-2 (LoRA-fine-tuned), mT5, and XLM-RoBERTa. Heavy prompt engineering + annotator metadata. Best results with Llama-2 for hard labels; XLM-R strongest for soft outputs. Tweets only (Tasks 1-3). No code repo mentioned. |
+| 24 | RMIT-IR at EXIST Lab at CLEF 2024 | Code found: https://github.com/rmit-ir/exist2024/ |  To do        | To do|
+| 25 | PINK at EXIST2024: A Cross-Lingual and Multi-Modal Transformer Approach for Sexism Detection in Memes| Code found: https://github.com/giulia95/PINK-at-EXIST2024/ |  To do        | To do|
+| 26 | Prompt Engineering for Identifying Sexism using GPT Mistral 7B | Code found: https://github.com/marco-siino/EXIST2024 |  To do        | To do|
+
+
+
+
 
 
 
